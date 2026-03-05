@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2108831987043668230}
   - component: {fileID: 694650675255980642}
   - component: {fileID: 7528826048397299534}
+  - component: {fileID: 4121387018141980162}
   m_Layer: 0
   m_Name: PurpleHole
   m_TagString: Untagged
@@ -115,6 +116,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4121387018141980162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504737826301961772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ed8927adf21d744b12f0e7877f6930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoleManager
+  _holeColor: Purple
 --- !u!1 &4006414493627418362
 GameObject:
   m_ObjectHideFlags: 0

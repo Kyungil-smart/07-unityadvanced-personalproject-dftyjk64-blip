@@ -8,9 +8,9 @@ using UnityEngine.AI;
 
 public class RaycastManager : MonoBehaviour
 {
-    [SerializeField] private LayerMask _targetHole; // Hole
-    [SerializeField] private float _rayLength;
-    [SerializeField] private NavMeshAgent _characterAgent; // charater
+    [SerializeField] private LayerMask _targetHole;
+    [SerializeField] private float _rayLength = 100f;
+    [SerializeField] private List<NavMeshAgent> _charaterAgent = new List<NavMeshAgent>();
     private Camera _cam;
 
     private void Awake()
@@ -32,8 +32,18 @@ public class RaycastManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, _rayLength, _targetHole))
         {
-            _characterAgent.SetDestination(hit.point);
-            Debug.Log($"{hit.transform.name} 감지, 거리: {hit.distance}, 감지 좌표: {hit.point}");
+            HoleManager hole = hit.transform.GetComponent<HoleManager>();
+
+            if (hole != null) 
+            {
+                foreach (NavMeshAgent corretAgent in _charaterAgent)
+                { 
+                    if (corretAgent != null)
+                    {
+                        hole.CallToHole(corretAgent);
+                    }
+                }
+            }
         }
     }
 
