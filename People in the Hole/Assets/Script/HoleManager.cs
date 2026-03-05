@@ -29,6 +29,10 @@ public class HoleManager : MonoBehaviour
     {
         if (other.name.Contains(_holeColor))
         {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.CharacterCount();
+            }
             Destroy(other.gameObject, 0.5f);
         }
     }

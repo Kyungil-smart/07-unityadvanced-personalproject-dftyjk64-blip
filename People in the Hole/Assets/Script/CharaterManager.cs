@@ -7,8 +7,6 @@ public class CharaterManager : MonoBehaviour
     private NavMeshAgent _agent;
     private NavMeshObstacle _obstacle;
 
-
-
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
